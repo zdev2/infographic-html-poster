@@ -6,12 +6,75 @@
     <title>Export Infografis to PNG</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <button id="export">Export to PNG</button>
-    <main class="infografis" id="infografis"></main>
-
+    <main class="infografis" id="infografis">
+      <!-- Judul Poster Infografis -->
+      <h1>Bahasa Pemrograman Paling Populer Saat Ini</h1>
+      <canvas id="setengahlingkaran"> </canvas>
+      <div class="python">
+        <div class="box">
+          <p class="angka">25,35%</p>
+          <p class="bahasa">Python</p>
+        </div>
+      </div>
+      <div class="cpp">
+        <div class="box">
+          <p class="angka">9,94%</p>
+          <p class="bahasa">C++</p>
+        </div>
+      </div>
+      <div class="c">
+        <div class="box">
+          <p class="angka">9,71%</p>
+          <p class="bahasa">C</p>
+        </div>
+      </div>
+      <div class="java">
+        <div class="box">
+          <p class="angka">9,31%</p>
+          <p class="bahasa">Java</p>
+        </div>
+      </div>
+      <div class="other">
+        <div class="box">
+          <p class="angka">45,69%</p>
+          <p class="bahasa">Bahasa Lainnya</p>
+        </div>
+      </div>
+    </main>
     <script>
+      // chart
+      const ctx = document.getElementById("setengahlingkaran").getContext("2d");
+      new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["Python", "C++", "C", "Java", "Other"],
+          datasets: [
+            {
+              data: [25.35, 9.94, 9.71, 9.31, 45.69],
+              borderWidth: 0,
+              backgroundColor: [
+                "#6991ff",
+                "#75b1ff",
+                "#6991ff",
+                "#ff6e69",
+                "#dedede",
+              ],
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      });
+
       document.getElementById("export").addEventListener("click", () => {
         const element = document.getElementById("infografis");
         html2canvas(element, { scale: 2 }).then((canvas) => {
