@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Export Infografis to PNG</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <button id="export">Export to PNG</button>
+    <main class="infografis" id="infografis"></main>
+
+    <script>
+      document.getElementById("export").addEventListener("click", () => {
+        const element = document.getElementById("infografis");
+        html2canvas(element, { scale: 2 }).then((canvas) => {
+          const link = document.createElement("a");
+          link.download = "infografis.png";
+          link.href = canvas.toDataURL();
+          link.click();
+        });
+      });
+    </script>
+  </body>
+</html>
