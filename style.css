@@ -95,7 +95,7 @@ canvas {
 }
 .cpp {
   position: absolute;
-  top: 54rem;
+  top: 52rem;
   right: 7rem;
   background: #0f1d2b00;
 }
@@ -110,7 +110,7 @@ canvas {
 }
 .c {
   position: absolute;
-  top: 65rem;
+  top: 67rem;
   right: 15rem;
 }
 
@@ -126,4 +126,46 @@ canvas {
   position: absolute;
   top: 70rem;
   right: 28.5rem;
+}
+
+.sumber {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 84rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+img {
+  height: 6rem;
+}
+
+.python-img {
+  position: absolute;
+  top: 33rem;
+  right: 27rem;
+}
+
+.cpp-img{
+  position: absolute;
+  top: 53rem;
+  right: 14rem;
+  height: 9rem;
+}
+
+.c-img {
+  position: absolute;
+  top: 63rem;
+  right: 23rem;
+}
+
+.java-img {
+  position: absolute;
+  top: 64rem;
+  right: 30.125rem;
+  height: 9rem;
 }
